@@ -1,0 +1,121 @@
+%!TEX program = xelatex
+% Scott's letterhead template. Requires that Miami logo and signature file be
+% installed within the LaTeX directory structure. The "letter" class is used
+% because it allows for spacing between paragraphs, but properly line breaks at
+% the end of paragraphs (the articles class tends to avoid full lines at the
+% ends of paragraphs, for some reason).
+
+\documentclass[$size$]{letter}
+\usepackage[letterpaper,margin=1in]{geometry}
+
+\usepackage{fixltx2e}
+
+% Adds microtypography features: character protrusion, for XeTeX.
+% \usepackage{microtype}
+
+% Allows links.
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[xetex, bookmarks, colorlinks, breaklinks]{hyperref}
+\hypersetup{colorlinks=true, urlcolor=NavyBlue, linkcolor=NavyBlue}
+
+\urlstyle{rm}
+
+\frenchspacing{}        % Remove extra spaces after periods.
+\pagestyle{empty}       % Remove page numbers.
+
+% load png file for logo
+\usepackage{graphicx}
+% \graphicspath{{/Users/lmp/Dropbox/AcademicWork/Pandoc_Templates/Letters/SCETL_Letter/}}
+\graphicspath{{/Users/lmp/.pandoc/images/}}
+
+\usepackage{fontspec}
+% \defaultfontfeatures{Mapping=tex-text}  % Sets quotation marks.
+% \setromanfont{Linux Libertine O}
+% \setsansfont[BoldFont={Helvetica Neue Bold}]{Helvetica Neue}
+% \setmonofont[Scale=MatchLowercase]{Inconsolata}
+$if(mainfont)$\setmainfont{$mainfont$}$endif$
+
+% From default template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\newcommand\shyp{\-}
+
+\newcommand{\header}[0]{
+    {\hypersetup{hidelinks}
+    \noindent
+    \parbox[b][0.625in][t]{6.5in}{
+        \vspace{-0.375in}
+        \parbox[b][0.625in][t]{3.74in}
+            {\href{http://www.scetl.asu.edu}
+            {\includegraphics[height=0.75in]{scetl.png}}}\hfill
+        \parbox[b][0.625in][t]{1.72in}{
+            \setlength{\baselineskip}{9pt}
+            \fontsize{9pt}{9pt}{
+              \fontspec{Helvetica}
+              \href{http://www.lukemperez.com}{\textbf{Luke M. Pérez}}\\
+              976 S. Forest Mall \\
+              Coor Hall 6636 \\
+              PO Box 870602 \\
+              Tempe, AZ 85287-0602 \\
+                \href{mailto:lukemperez@asu.edu}{lukemperez@asu.edu}
+                }
+            }
+        }}
+    }
+
+$if(draft)$
+\usepackage{draftwatermark}
+\SetWatermarkLightness{.9}
+$endif$
+
+\begin{document}
+
+\header
+\vspace{0.2in}
+
+\today
+
+$for(toadd)$$toadd$$sep$\\$endfor$
+
+$for(subject)$
+Subject: $subject$
+$endfor$
+
+$greeting$,
+
+$body$
+
+$if(sig.include)$
+\begin{minipage}[t]{6.5in}
+  $if(regards)$
+  $for(regards)$
+  $regards$, \\
+  $endfor$
+  $else$
+  Kindest Regards,
+  $endif$\\
+    $if(sig.sign)$
+        \vspace{-0.2in}\includegraphics{}
+    $else$
+        \\
+    $endif$
+    \\
+    $name$\\
+    $sig.post$
+    \end{minipage}
+$endif$
+
+$if(cc)$
+    cc: $for(cc)$$cc$$sep$, $endfor$
+$endif$
+
+$if(ps)$
+    \emph{PS:} $ps$
+$endif$
+
+$if(encl)$
+    Encl: $for(encl)$$encl$$sep$, $endfor$
+$endif$
+
+\end{document}

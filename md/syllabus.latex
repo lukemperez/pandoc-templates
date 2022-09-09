@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{parskip}
+\title{$title$}
+\author{$author$}
+\date{$term$}
+\usepackage{longtable}
+\usepackage{booktabs}
+%\usepackage[sc]{mathpazo}
+% \linespread{1.05}         % Palatino needs more leading (space between lines)
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+
+%$if(draft)$
+%\usepackage{draftwatermark}
+%% \SetWatermarkText{Draft. \\ Subject to change.}
+%\SetWatermarkScale{0.5}
+%\SetWatermarkLightness{0.9}
+%$endif$
+
+\usepackage{titling}
+\pretitle{\begin{flushleft}\Large\bfseries}
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+\preauthor{\begin{flushleft}\Large\itshape}
+\postauthor{\par\end{flushleft}}
+\predate{\begin{flushleft}}
+\postdate{\par\end{flushleft}}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}[]
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{}[]
+\titleformat{\subsubsection}{\normalfont\large\bfseries}{}{0pt}{}[]
+\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}[]
+\titleformat{\subparagraph}[hang]{\normalfont\normalsize\scshape}{\thesubparagraph}{1em}{}[]
+
+
+\setcounter{secnumdepth}{2} % 2 is subsection
+% \usepackage{titletoc}
+
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{}
+\renewcommand{\theparagraph}{}
+\renewcommand{\thesubparagraph}{}
+
+\usepackage{setspace}
+%\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{url}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{layout}
+\lhead{}
+\chead{}
+\rhead{\footnotesize $course$ ($unique$), $term$}
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\usepackage{array, xcolor}
+\usepackage{color,hyperref}
+\definecolor{ASUMaroon}{HTML}{8C1D40} %{F1B82D} MU Dig Gold %{EA6A20} clemson
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=ASUMaroon,urlcolor=ASUMaroon,
+            anchorcolor=ASUMaroon,citecolor=ASUMaroon}
+
+\def\tightlist{}
+
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+
+
+% CMS Style Footnotes
+\makeatletter
+\renewcommand\@makefntext[1]{%
+    \parindent 1em%
+    \@thefnmark.~#1}
+  \makeatother
+\begin{document}
+
+\newcommand{\canvas}{\textsc{canvas}}
+
+%\begin{document}
+
+\maketitle
+
+\begin{tabular*}{.93\textwidth}{@{\extracolsep{\fill}}ll}
+E-mail: \texttt{$email$} & Unique ID: \#$unique$  \\
+Office Hours: $officehours$  &  Class Hours: $classtime$ \\
+Office: $office$ & Class Room: $classroom$ \\
+&  \\
+% \hline
+\end{tabular*}
+
+
+$body$
+
+\end{document}
