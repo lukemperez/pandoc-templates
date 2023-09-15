@@ -5,11 +5,13 @@
 % \newcommand{\blankline}{\quad\pagebreak[2]}
 
 \usepackage{amssymb} %math logic symbols 
-
+$for(header-includes)$
+$header-includes$
+$endfor$
 \usepackage{parskip}
 \title{$title$$if(subtitle)$: \vskip 0.5em $subtitle$$endif$$if(thanks)$\thanks{$thanks$}$endif$}
-\author{$for(author)$$author$$sep$ and $endfor$ $if(institute)$ \\ \textit{$institute$}$endif$}
-%\author{$for(author)$ $author.name$\vspace{0.05in} \\ \emph{$author.affiliation$}$sep$ \\ and \\ $endfor$}
+\author{$for(author)$$author$$sep$ \\ and \\ $endfor$ $if(institute)$ \\ \textit{$institute$}$endif$}
+%% \author{$for(author)$ $author.name$\vspace{0.05in} \\ \emph{$author.affiliation$} $sep$ \par $endfor$}
 \date{$date$}
 
 % \usepackage[sc]{mathpazo}
@@ -83,14 +85,10 @@ $endif$
 
 
 \usepackage{array}
-\usepackage[svgnames]{xcolor}
+%\usepackage[svgnames]{xcolor}
 \usepackage{color,hyperref}
-% \definecolor{clemsonorange}{HTML}{EA6A20}
-% \hypersetup{colorlinks,breaklinks,
-            % linkcolor=clemsonorange,urlcolor=clemsonorange,
-            % anchorcolor=clemsonorange,citecolor=black}
-%\hypersetup{colorlinks=false,breaklinks} %linkcolor=Maroon, urlcolor=Maroon
-\hypersetup{colorlinks=true,breaklinks,linkcolor=Maroon,urlcolor=Maroon}
+
+% \hypersetup{colorlinks=true,breaklinks,linkcolor=Maroon,urlcolor=Maroon}
 
 $if(graphics)$
 \usepackage{graphicx}

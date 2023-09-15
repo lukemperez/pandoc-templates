@@ -12,12 +12,12 @@
 %\usepackage[T1]{fontenc}
 %\usepackage{lmodern}
 
-%$if(draft)$
-%\usepackage{draftwatermark}
-%% \SetWatermarkText{Draft. \\ Subject to change.}
-%\SetWatermarkScale{0.5}
-%\SetWatermarkLightness{0.9}
-%$endif$
+$if(draft)$
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft. \\ Subject to change.}
+\SetWatermarkScale{0.5}
+\SetWatermarkLightness{0.9}
+$endif$
 
 \usepackage{titling}
 \pretitle{\begin{flushleft}\Large\bfseries}

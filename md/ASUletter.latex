@@ -7,6 +7,7 @@
 
 \documentclass[$size$]{letter}
 \usepackage[letterpaper,margin=1in]{geometry}
+% \usepackage[a4paper,margin=2cm]{geometry}
 
 \usepackage{fixltx2e}
 
@@ -21,7 +22,12 @@
 \urlstyle{rm}
 
 \frenchspacing{}        % Remove extra spaces after periods.
-\pagestyle{empty}       % Remove page numbers.
+
+$if(number-pages)$
+\pagestyle{plain}       % Simple page numbers
+$else$
+\pagestyle{empty}	% Remove page numbers.
+$endif$
 
 % load png file for logo
 \usepackage{graphicx}
@@ -74,7 +80,13 @@ $endif$
 \header
 \vspace{0.2in}
 
+$if(date)$
+$for(date)$
+$date$
+$endfor$
+$else$
 \today
+$endif$
 
 $for(toadd)$$toadd$$sep$\\$endfor$
 
