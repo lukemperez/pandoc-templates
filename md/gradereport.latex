@@ -85,10 +85,10 @@ $endif$
 
 
 \usepackage{array}
-\usepackage[svgnames]{xcolor}
+%\usepackage[svgnames]{xcolor}
 \usepackage{color,hyperref}
 
-\hypersetup{colorlinks=true,breaklinks,linkcolor=Maroon,urlcolor=Maroon}
+% \hypersetup{colorlinks=true,breaklinks,linkcolor=Maroon,urlcolor=Maroon}
 
 $if(graphics)$
 \usepackage{graphicx}
