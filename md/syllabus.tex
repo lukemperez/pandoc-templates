@@ -66,6 +66,7 @@ $endif$
 \hypersetup{colorlinks,breaklinks,
             linkcolor=ASUMaroon,urlcolor=ASUMaroon,
             anchorcolor=ASUMaroon,citecolor=ASUMaroon}
+
 \def\tightlist{}
 
 \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
@@ -81,16 +82,6 @@ $endif$
 
 \newcommand{\canvas}{\textsc{canvas}}
 
-% Definine CSL
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newenvironment{CSLReferences}%
-  {\setlength{\parindent}{0pt}%
-  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
-  {\par}
-
-
-
 %\begin{document}
 
 \maketitle
@@ -102,17 +93,6 @@ Office: $office$ & Class Room: $classroom$ \\
 &  \\
 % \hline
 \end{tabular*}
-
-$if(quote)$
-\begin{flushright}
-  \begin{minipage}{.5\textwidth}
-
-  \noindent ``$quote$'' \newline --$quoteauth$
-  \end{minipage}
-  \end{flushright}
-$endif$
-
-
 
 
 $body$
