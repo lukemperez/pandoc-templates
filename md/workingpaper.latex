@@ -65,7 +65,6 @@ $endif$
 \usepackage{fancyhdr,lastpage}
 \usepackage[hyphens]{url}
 \pagestyle{plain}
-\usepackage{hyperref}
 \usepackage{lastpage}
 \usepackage{amsmath}
 \usepackage{booktabs}
@@ -87,7 +86,6 @@ $endif$
 \usepackage{array}
 \usepackage[svgnames]{xcolor}
 \usepackage{color,hyperref}
-
 \hypersetup{colorlinks=true,breaklinks,linkcolor=Maroon,urlcolor=Maroon}
 
 $if(graphics)$
@@ -113,7 +111,7 @@ $endif$
 % CMS Style Footnotes
 \makeatletter
 \renewcommand\@makefntext[1]{%
-    \parindent 1em%
+    \parindent 0.5in%
     \@thefnmark.~#1}
   \makeatother
 
@@ -161,25 +159,24 @@ $endif$
 $if(csl-refs)$
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\newenvironment{CSLReferences}[2]%
+{$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+{\par}
 $endif$
+
+%% Temp ChatGPT Code but didn't work
+%% Define CSLReferences environment required by Pandoc >= 2.11
+%\newlength{\cslhangindent}
+%\setlength{\cslhangindent}{1.5em}
+%\newenvironment{CSLReferences}[2] % #1 is the number of references (ignored) and #2 is a dummy
+% {% don't indent paragraphs
+%  \setlength{\parindent}{0pt}
+%  % turn on hanging indent if param 1 is 1
+%  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+%  }%
+% {}
+
 
 % $if(csquotes)$
 % \usepackage{csquotes}
@@ -218,13 +215,13 @@ $endif$
 
 $body$
 
-% $if(bibliography)$
-% \vspace{-2em}
-% \setlength{\parindent}{-0.2in}
-% \setlength{\leftskip}{0.2in}
-% \setlength{\parskip}{8pt}
-% \singlespacing
-% \noindent
-% $endif$
+%$if(bibliography)$
+%\vspace{-2em}
+%\setlength{\parindent}{-0.2in}
+%\setlength{\leftskip}{0.2in}
+%\setlength{\parskip}{8pt}
+%\singlespacing
+%\noindent
+%$endif$
 
 \end{document}
