@@ -29,6 +29,11 @@ $else$
 \pagestyle{empty}	% Remove page numbers.
 $endif$
 
+% Longtable
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs} % Optional, for better looking tables
+
 % load png file for logo
 \usepackage{graphicx}
 % \graphicspath{{/Users/lmp/Dropbox/AcademicWork/Pandoc_Templates/Letters/SCETL_Letter/}}
