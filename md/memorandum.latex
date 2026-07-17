@@ -28,8 +28,9 @@ $endif$
 %\setlength{\emergencystretch}{3em}  % prevent overfull lines 
 \setlength{\parskip}{12pt} 
 
-\usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+%\setmainfont{Latin Modern Roman}
+
 \linespread{1.05}
 
 \usepackage{fancyhdr}

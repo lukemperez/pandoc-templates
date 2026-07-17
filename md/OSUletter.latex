@@ -11,6 +11,7 @@
 
 \usepackage{fixltx2e}
 
+\usepackage{fancyhdr}
 % Adds microtypography features: character protrusion, for XeTeX.
 % \usepackage{microtype}
 
@@ -37,7 +38,7 @@ $endif$
 % load png file for logo
 \usepackage{graphicx}
 % \graphicspath{{/Users/lmp/Dropbox/AcademicWork/Pandoc_Templates/Letters/SCETL_Letter/}}
-\graphicspath{{/Users/lmp/.pandoc/images/}}
+\graphicspath{{/Users/perez.134/.pandoc/images/}}
 
 \usepackage{fontspec}
 % \defaultfontfeatures{Mapping=tex-text}  % Sets quotation marks.
@@ -52,29 +53,32 @@ $if(mainfont)$\setmainfont{$mainfont$}$endif$
 
 \newcommand\shyp{\-}
 
+% 2026-04-16 Temp hide for coverletter
+
 \newcommand{\header}[0]{
-    {\hypersetup{hidelinks}
-    \noindent
-    \parbox[b][0.625in][t]{6.5in}{
-        \vspace{-0.375in}
-        \parbox[b][0.625in][t]{3.74in}
-            {\href{http://www.chasecenter.osu.edu}
-            {\includegraphics[height=0.75in]{chase.png}}}\hfill
-        \parbox[b][0.625in][t]{1.72in}{
-            \setlength{\baselineskip}{9pt}
-            \fontsize{10pt}{10pt}{
-             \fontspec{Avenir}
-               \color{black!60}  % 60% black, adjust to match logo grey
-              %% \href{http://www.lukemperez.com}{\textbf{Luke M. Pérez}}\\
-              \textbf{Luke M. Perez} \\
-              5036 Smith Lab \\
-              174 W. 18th Avenue \\
-              Columbus, OH 43210 \\
-                \href{mailto:perez.134@osu.edu}{perez.134@osu.edu}
-                }
-            }
-        }}
-    }
+   {\hypersetup{hidelinks}
+   \noindent
+   \parbox[b][0.625in][t]{6.5in}{
+       \vspace{-0.375in}
+       \parbox[b][0.625in][t]{3.74in}
+           {\href{http://www.chasecenter.osu.edu}
+           {\includegraphics[height=0.75in]{chase.png}}}\hfill
+       \parbox[b][0.625in][t]{1.72in}{
+       	   \vspace{0.075in} % fine tune alignment with OSU logo
+           \setlength{\baselineskip}{9pt}
+           \fontsize{10pt}{10pt}{
+            \fontspec{Avenir}
+              \color{black!60}  % 60% black, adjust to match logo grey
+             %% \href{http://www.lukemperez.com}{\textbf{Luke M. Pérez}}\\
+             \textbf{Luke M. Perez} \\
+             5036 Smith Lab \\
+             174 W. 18th Avenue \\
+             Columbus, OH 43210 \\
+               \href{mailto:perez.134@osu.edu}{perez.134@osu.edu}
+               }
+           }
+       }}
+   }
 
 $if(draft)$
 \usepackage{draftwatermark}
