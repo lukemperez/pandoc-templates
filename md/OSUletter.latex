@@ -38,7 +38,8 @@ $endif$
 % load png file for logo
 \usepackage{graphicx}
 % \graphicspath{{/Users/lmp/Dropbox/AcademicWork/Pandoc_Templates/Letters/SCETL_Letter/}}
-\graphicspath{{/Users/perez.134/.pandoc/images/}}
+%\graphicspath{{/Users/lmp/.pandoc/images/}}
+\graphicspath{{$home$/.pandoc/images/}}
 
 \usepackage{fontspec}
 % \defaultfontfeatures{Mapping=tex-text}  % Sets quotation marks.
