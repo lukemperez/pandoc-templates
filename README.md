@@ -1,7 +1,8 @@
 # Pandoc Templates {#pandoc-templates}
 
-Custom template from my `.pandoc` folder. These are mostly standard with some distinct templates for making my various syllabus, CV, and other documents.
-- Work in progress
+Custom template from my `.pandoc` folder. These are mostly standard with some distinct templates for making my various syllabus, CV, and other documents. **Caution: This is a work-in-progress and not everything in this repo works accurately. I know all the work-arounds and peculiarities. I can't guarantee any of this works for you.** 
+
+Happy to help anyone getting setup with pandoc and make. More than happy to receive advice on cleaning up how I use this stuff. 
 
 ## MD (Markdown) {#md}
 
@@ -10,6 +11,8 @@ A major work in progress. Here I store most of my templates and false starts. I 
 - Resume: a modern resume template revised from John Bokma's and [forked here](https://github.com/lukemperez/resume-pandoc/blob/master/README.md).
 - Vita: a template for an academic vita
 - Working Paper: a template for working papers
+
+A few PDFs are in the `examples/` folder.
 
 ## QMD {#quarto}
 
